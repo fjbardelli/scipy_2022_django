@@ -1,0 +1,32 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Fernando J Bardelli", email = "fernando@fliabardelli.com.ar"},
+]
+dependencies = [
+    "django>=4.1.1",
+    "django-import-export>=2.8.0",
+    "django-extensions>=3.2.0",
+    "numpy>=1.23.3",
+    "pandas>=1.5.0",
+    "django-pandas>=0.6.6",
+    "ipython>=8.5.0",
+    "jupyter>=1.0.0",
+    "matplotlib>=3.6.0",
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+[project.optional-dependencies]
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool]
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipython>=8.5.0",
+]

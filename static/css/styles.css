@@ -1,0 +1,21 @@
+/* Footer */
+.page-footer {
+    position: absolute;
+    bottom: 0;
+    height: 40p; 
+    width: 100%;
+
+    background-color: #e5e2eb;
+    color: #026b35a2;
+}
+
+.page-header {
+    position: absolute;
+    top: 0;
+    height: 40;
+    width: 100%;
+
+    background-color: #e5e2eb;
+    color: #026b35a2;
+}
+

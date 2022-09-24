@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Listado de Moviles por Servicio CBV</h1>
+    <br>
+    <hr>
+    <ul>
+        <h2>{{ object.nro_telefono }} => {{ object.nombre }}</h2>
+        <hr>
+ 
+    {% for m in object.movil_set.all %}
+        <li>
+           {{m.patente}}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

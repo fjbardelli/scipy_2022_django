@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Estadistica por Mes</h1>
+    <br>
+    <hr>
+    
+    <table>
+        <thead >
+            <tr>
+                <th>Mes</th>
+                <th>llamados</th>
+                <th>sospechosos</th>
+                <th>descartados</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in df %}
+                <tr> 
+                    <td>{{registro.mes}}</td>
+                    <td>{{registro.llamados}}</td>
+                    <td>{{registro.sospechosos}}</td>
+                    <td>{{registro.descartados}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+

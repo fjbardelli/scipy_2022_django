@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Regsitro de llamdas</h1>
+    <br>
+    <hr>
+    <strong>Fecha: </strong>{{registro.fecha|date:'d/m/Y'}}   <strong>Hora: </strong>  {{registro.fecha|date:'H:i'}} <br>
+    <hr>
+   <strong>Llamados: </strong>{{registro.llamados}}<br>
+   <strong>Sospechosos: </strong>{{registro.sospechosos}}<br>
+   <strong>Descartados: </strong>{{registro.descartados}}<br>
+   <strong>Trasladados: </strong>{{registro.trasladados}}<br>
+   <strong>Derivados: </strong>{{registro.derivados}}<br>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Llamados</h1>
+    <br>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_p }}
+        </table>
+        <br>
+        <input type="submit" value="Grabar" />
+    </form>
+    
+{% endblock %}
+

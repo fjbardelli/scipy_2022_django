@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Listado de Servicios CBV</h1>
+    {% comment %} <a href="{% url 'alumnos_new' %}"><button type="button" class="btn btn-primary">Nuevo</button></a> {% endcomment %}
+    <br>
+    <hr>
+    <ul>
+    {% for svr in object_list %}
+    {% comment %} {% for svr in s %} {% endcomment %}
+        <li>
+            {{ svr.nro_telefono }} => {{ svr.nombre }}
+
+            <a href="{% url 'servicios_moviles_list_c' pk=svr.pk %}"><button type="button" class="btn btn-outline-primary btn-sm">Moviles</button></a>
+            <a href="{% url 'servicios_editar_c' pk=svr.pk %}"><button type="button" class="btn btn-outline-success btn-sm">editar</button></a>
+            <a href="{% url 'servicios_borrar_c' pk=svr.pk %}"><button type="button" class="btn btn-outline-danger btn-sm">borrar</button></a> 
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

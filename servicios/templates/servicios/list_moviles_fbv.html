@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Listado de Moviles por Servicio FBV</h1>
+    {% comment %} <a href="{% url 'alumnos_new' %}"><button type="button" class="btn btn-primary">Nuevo</button></a> {% endcomment %}
+    <br>
+    <hr>
+    <ul>
+        <h2>{{ s.nro_telefono }} => {{ s.nombre }}</h2>
+        <hr>
+ 
+    {% for m in s.movil_set.all %}
+        <li>
+           {{m.patente}}
+{% comment %} 
+            <a href="{% url 'alumnos_detail' pk=alumno.pk %}"><button type="button" class="btn btn-outline-primary btn-sm"">ver</button></a>
+            <a href="{% url 'alumnos_edit' pk=alumno.pk %}"><button type="button" class="btn btn-outline-success btn-sm"">editar</button></a>
+            <a href="{% url 'alumnos_remove' pk=alumno.pk %}"><button type="button" class="btn btn-outline-danger btn-sm">borrar</button></a> {% endcomment %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Listado de Llamados</h1>
+    {% comment %} <a href="{% url 'alumnos_new' %}"><button type="button" class="btn btn-primary">Nuevo</button></a> {% endcomment %}
+    <br>
+    <hr>
+    <table>
+        <thead >
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>llamados</th>
+                <th>sospechosos</th>
+                <th>descartados</th>
+                <th>trasladados</th>
+                <th>derivados</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in object_list %}
+                <tr> 
+                    <td>{{registro.fecha|date:'d/m/Y'}}</td>
+                    <td>{{registro.fecha|date:'H:i'}}</td>
+                    <td>{{registro.llamados}}</td>
+                    <td>{{registro.sospechosos}}</td>
+                    <td>{{registro.descartados}}</td>
+                    <td>{{registro.trasladados}}</td>
+                    <td>{{registro.derivados}}</td>
+                    <td>
+                        <a href="{% url 'registros_detail' pk=registro.pk %}"><button type="button" class="btn btn-outline-primary btn-sm">ver</button></a>
+                    </td>
+
+                    <td>
+                        <a href="{% url 'registros_editar' pk=registro.pk %}"><button type="button" class="btn btn-outline-success btn-sm">editar</button></a>
+                    </td>
+                    <td>
+                        <a href="{% url 'registros_borrar' pk=registro.pk %}"><button type="button" class="btn btn-outline-danger btn-sm">borrar</button></a> 
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% if is_paginated %}
+<ul class="pagination">
+{% if page_obj.has_previous %}
+    <li>
+        <span><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
+    </li>
+{% endif %}
+    <li class="">
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span>
+    </li>
+{% if page_obj.has_next %}
+    <li>
+        <span><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
+    </li>
+{% endif %}
+</ul>
+{% else %}
+    <h3>Your File Exam</h3>
+    <p>File not yet available</p>
+{% endif %}    
+{% endblock %}
+

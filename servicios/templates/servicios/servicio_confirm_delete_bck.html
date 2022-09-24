@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Alta de Servicio CBV</h1>
+    <br>
+    <hr>
+    <form action="" method="post">{% csrf_token %}
+        <p>¿Estás seguro de que quieres borrar "{{ object }}"?</p>
+        <input type="submit" value="Sí, borrar la página" />
+    </form>
+{% endblock %}

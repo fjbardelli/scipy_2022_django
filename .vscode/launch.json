@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos 
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+
+    // https://code.visualstudio.com/docs/editor/variables-reference
+
+    
+    "version": "0.2.0",
+    "configurations": [
+    
+
+        {
+            "name": "Server (8001)",
+            "type":"python",
+            "request": "launch",
+            "django": true,
+            "program": "manage.py",
+            // "console": "integratedTerminal",
+            //"env": {"PYTHONPATH": "__pypackages__/3.9/lib"},
+            // "subProcess": true,
+            "args": [
+                "runserver",
+                "0.0.0.0:8001",
+            ],
+        },
+
+        {
+            "name": "Scripts",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "env": {"PYTHONPATH": "__pypackages__/3.9/lib"},
+            "console": "integratedTerminal",
+            "args": [
+                "runscript",
+                "${fileBasenameNoExtension}",
+                //"--script-args",
+                //"27",
+            ],
+            "django": true
+        },
+    ]
+}

@@ -1,0 +1,47 @@
+  <nav class="navbar navbar-expand-sm navbar-ligth " style="background-color: #083294;" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home'  %}" style="color:white">SyPy Salta 2022</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home'  %}" style="color:#379bd4">Home</a>
+          </li>
+          {% comment %} FUNCTIONS BASE VIEW {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false" style="color:#379bd4">Servicios FBV</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+              <li><a class="dropdown-item" href="{% url 'servicios_list' %}">Listado</a></li>
+              <li><a class="dropdown-item" href="{% url 'servicios_nuevo' %}">Nuevo</a></li>
+
+            </ul>
+          </li>
+
+          {% comment %} CLASS BASE VIEW {% endcomment %}
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false" style="color:#379bd4">Servicios CBV</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+              <li><a class="dropdown-item" href="{% url 'servicios_list_c' %}">Listado</a></li>
+              <li><a class="dropdown-item" href="{% url 'servicios_nuevo_c' %}">Nuevo</a></li>
+            </ul>
+          </li>
+
+
+          {% comment %} REGISTROS {% endcomment %}
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false" style="color:#379bd4">Registros</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+              <li><a class="dropdown-item" href="{% url 'registros_list' %}">Listado</a></li>
+              <li><a class="dropdown-item" href="{% url 'registros_nuevo' %}">Nuevo</a></li>
+              <li><a class="dropdown-item" href="{% url 'registros_pandas' %}">Pandas FBV</a></li>
+              <li><a class="dropdown-item" href="{% url 'registros_pandas_c' %}">Pandas CBV</a></li>
+              <li><a class="dropdown-item" href="{% url 'registros_download' %}">Download</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
