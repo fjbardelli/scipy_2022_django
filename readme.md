@@ -19,7 +19,7 @@ Este taller esta  pensado para hacer una Introducción a Django, pasando por los
 
 ## Documentación
 
-[Draft](doc/draft.md)
-[Guía de le Demo](doc/guia.md)
-[Modelos](doc/modelos.md)
+- [Draft](doc/draft.md)
+- [Guía de le Demo](doc/guia.md)
+- [Modelos](doc/modelos.md)
 
