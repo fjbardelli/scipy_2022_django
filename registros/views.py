@@ -17,7 +17,7 @@ import pandas as pd
 @method_decorator(csrf_exempt, name='dispatch')
 class registros_list(ListView):
         model = Registro
-        paginate_by = 10
+        paginate_by = 25
 
 @method_decorator(csrf_exempt, name='dispatch')
 class registros_detail(DetailView):

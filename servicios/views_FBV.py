@@ -27,7 +27,7 @@ def servicio_abm_nuevo(request):
             servicio = form.save(commit=False)
             servicio.save()
             # return redirect('servicio_detalle', id=servicio.pk
-            return redirect('servicio_list')
+            return redirect('servicios_list')
     else:
         form = ABMServicioForm()
     return render(request, 'servicios/formulario.html', {'form': form})

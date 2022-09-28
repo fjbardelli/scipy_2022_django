@@ -6,8 +6,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
-
-
 from servicios.models import Servicio
 from servicios.forms import ABMServicioForm
 
@@ -16,7 +14,7 @@ from servicios.forms import ABMServicioForm
 @method_decorator(csrf_exempt, name='dispatch')
 class servicios_list_c(ListView):
         model = Servicio
-        #template_name = 'servicios/cbv_list.html'
+        template_name = 'servicios/servicio_list-1.html'
         #context_object_name = 's'
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -44,9 +42,3 @@ class servicio_abm_editar_c(UpdateView):
 class servicio_abm_borrar_c(DeleteView):
     model = Servicio
     success_url = "/"
-    
-# @csrf_exempt
-# def servicio_abm_borrar(request, pk):
-#     servicio = get_object_or_404(Servicio, pk=pk)
-#     servicio.delete()
-#     return redirect('servicios_list')
